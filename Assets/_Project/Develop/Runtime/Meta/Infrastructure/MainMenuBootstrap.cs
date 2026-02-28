@@ -24,7 +24,7 @@ namespace _Project.Develop.Runtime.Meta.Infrastructure
         public override IEnumerator Initialize()
         {
             Debug.Log("Инициализация сцены меню");
-
+            
             yield break;
         }
 
