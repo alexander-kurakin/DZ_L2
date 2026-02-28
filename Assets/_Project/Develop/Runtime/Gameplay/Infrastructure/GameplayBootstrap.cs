@@ -3,7 +3,6 @@ using System.Collections;
 using _Project.Develop.Runtime.Gameplay.Logic;
 using _Project.Develop.Runtime.Infrastructure;
 using _Project.Develop.Runtime.Infrastructure.DI;
-using _Project.Develop.Runtime.Utilities.CoroutinesManagement;
 using _Project.Develop.Runtime.Utilities.SceneManagement;
 using UnityEngine;
 

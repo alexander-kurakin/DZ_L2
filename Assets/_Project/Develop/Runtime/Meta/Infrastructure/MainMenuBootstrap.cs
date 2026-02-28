@@ -1,10 +1,7 @@
 ﻿using System.Collections;
-using _Project.Develop.Runtime.Configs.Gameplay;
-using _Project.Develop.Runtime.Gameplay.Infrastructure;
 using _Project.Develop.Runtime.Infrastructure;
 using _Project.Develop.Runtime.Infrastructure.DI;
 using _Project.Develop.Runtime.Meta.Core;
-using _Project.Develop.Runtime.Utilities.CoroutinesManagement;
 using _Project.Develop.Runtime.Utilities.SceneManagement;
 using UnityEngine;
 
