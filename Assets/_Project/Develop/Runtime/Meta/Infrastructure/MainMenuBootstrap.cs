@@ -11,6 +11,7 @@ namespace _Project.Develop.Runtime.Meta.Infrastructure
     {
         private DIContainer _container;
         private GameModeChooseService _gameModeChooseService;
+        private MenuStatsService _menuStatsService;
 
         public override void ProcessRegistrations(DIContainer container, IInputSceneArgs sceneArgs = null)
         {
@@ -18,7 +19,7 @@ namespace _Project.Develop.Runtime.Meta.Infrastructure
 
             MainMenuContextRegistrations.Process(_container);
             _gameModeChooseService = _container.Resolve<GameModeChooseService>();
-            
+            _menuStatsService = _container.Resolve<MenuStatsService>();
         }
 
         public override IEnumerator Initialize()
@@ -36,6 +37,7 @@ namespace _Project.Develop.Runtime.Meta.Infrastructure
         private void Update()
         {
             _gameModeChooseService?.Update(Time.deltaTime);
+            _menuStatsService?.Update(Time.deltaTime);
         }
     }
 }
