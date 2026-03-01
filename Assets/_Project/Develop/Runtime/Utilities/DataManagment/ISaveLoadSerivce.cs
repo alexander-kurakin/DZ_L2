@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace _Project.Develop.Runtime.Utilities.DataManagment
+namespace _Project.Develop.Runtime.Utilities.DataManagement
 {
     public interface ISaveLoadSerivce
     {

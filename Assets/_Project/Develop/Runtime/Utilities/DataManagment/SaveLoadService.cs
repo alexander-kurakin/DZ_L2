@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
-using _Project.Develop.Runtime.Utilities.DataManagment.DataRepository;
-using _Project.Develop.Runtime.Utilities.DataManagment.KeysStorage;
-using _Project.Develop.Runtime.Utilities.DataManagment.Serializers;
+using _Project.Develop.Runtime.Utilities.DataManagement.DataRepository;
+using _Project.Develop.Runtime.Utilities.DataManagement.KeysStorage;
+using _Project.Develop.Runtime.Utilities.DataManagement.Serializers;
 
-namespace _Project.Develop.Runtime.Utilities.DataManagment
+namespace _Project.Develop.Runtime.Utilities.DataManagement
 {
     public class SaveLoadService : ISaveLoadSerivce
     {

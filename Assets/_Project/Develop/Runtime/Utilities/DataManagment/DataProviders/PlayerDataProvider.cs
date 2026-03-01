@@ -4,7 +4,7 @@ using _Project.Develop.Runtime.Configs.Meta.Wallet;
 using _Project.Develop.Runtime.Meta.Features.Wallet;
 using _Project.Develop.Runtime.Utilities.ConfigsManagement;
 
-namespace _Project.Develop.Runtime.Utilities.DataManagment.DataProviders
+namespace _Project.Develop.Runtime.Utilities.DataManagement.DataProviders
 {
     public class PlayerDataProvider : DataProvider<PlayerData>
     {
@@ -22,6 +22,8 @@ namespace _Project.Develop.Runtime.Utilities.DataManagment.DataProviders
             return new PlayerData()
             {
                 WalletData = InitWalletData(),
+                Wins = 0,
+                Losses = 0
             };
         }
 

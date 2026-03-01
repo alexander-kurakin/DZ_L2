@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO;
 
-namespace _Project.Develop.Runtime.Utilities.DataManagment.DataRepository
+namespace _Project.Develop.Runtime.Utilities.DataManagement.DataRepository
 {
     public class LocalFileDataRepository : IDataRepository
     {

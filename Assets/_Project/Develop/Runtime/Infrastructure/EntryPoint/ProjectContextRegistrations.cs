@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project.Develop.Runtime.Infrastructure.DI;
+using _Project.Develop.Runtime.Meta.Features.Stats;
 using _Project.Develop.Runtime.Meta.Features.Wallet;
 using _Project.Develop.Runtime.Utilities.AssetsManagement;
 using _Project.Develop.Runtime.Utilities.ConfigsManagement;
 using _Project.Develop.Runtime.Utilities.CoroutinesManagement;
-using _Project.Develop.Runtime.Utilities.DataManagment;
-using _Project.Develop.Runtime.Utilities.DataManagment.DataProviders;
-using _Project.Develop.Runtime.Utilities.DataManagment.DataRepository;
-using _Project.Develop.Runtime.Utilities.DataManagment.KeysStorage;
-using _Project.Develop.Runtime.Utilities.DataManagment.Serializers;
+using _Project.Develop.Runtime.Utilities.DataManagement;
+using _Project.Develop.Runtime.Utilities.DataManagement.DataProviders;
+using _Project.Develop.Runtime.Utilities.DataManagement.DataRepository;
+using _Project.Develop.Runtime.Utilities.DataManagement.KeysStorage;
+using _Project.Develop.Runtime.Utilities.DataManagement.Serializers;
 using _Project.Develop.Runtime.Utilities.LoadingScreen;
 using _Project.Develop.Runtime.Utilities.Reactive;
 using _Project.Develop.Runtime.Utilities.SceneManagement;
@@ -39,6 +40,8 @@ namespace _Project.Develop.Runtime.Infrastructure.EntryPoint
             container.RegisterAsSingle(CreatePlayerDataProvider);
 
             container.RegisterAsSingle<ISaveLoadSerivce>(CreateSaveLoadService);
+            
+            container.RegisterAsSingle(CreateStatsService).NonLazy();
         }
         
         private static PlayerDataProvider CreatePlayerDataProvider(DIContainer c)
@@ -64,6 +67,14 @@ namespace _Project.Develop.Runtime.Infrastructure.EntryPoint
                 currencies[currencyType] = new ReactiveVariable<int>();
 
             return new WalletService(currencies, c.Resolve<PlayerDataProvider>());
+        }
+
+        private static StatsService CreateStatsService(DIContainer c)
+        {
+            ReactiveVariable<int> wins =  new();
+            ReactiveVariable<int> losses = new();
+
+            return new StatsService(wins, losses, c.Resolve<PlayerDataProvider>());
         }
 
         private static SceneSwitcherService CreateSceneSwitcherService(DIContainer c)

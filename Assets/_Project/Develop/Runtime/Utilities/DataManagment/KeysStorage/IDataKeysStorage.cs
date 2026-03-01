@@ -1,4 +1,4 @@
-﻿namespace _Project.Develop.Runtime.Utilities.DataManagment.KeysStorage
+﻿namespace _Project.Develop.Runtime.Utilities.DataManagement.KeysStorage
 {
     public interface IDataKeysStorage
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Project.Develop.Runtime.Utilities.DataManagment;
-using _Project.Develop.Runtime.Utilities.DataManagment.DataProviders;
+using _Project.Develop.Runtime.Utilities.DataManagement;
+using _Project.Develop.Runtime.Utilities.DataManagement.DataProviders;
 using _Project.Develop.Runtime.Utilities.Reactive;
 
 namespace _Project.Develop.Runtime.Meta.Features.Wallet
@@ -16,6 +16,7 @@ namespace _Project.Develop.Runtime.Meta.Features.Wallet
             PlayerDataProvider playerDataProvider)
         {
             _currencies = new Dictionary<CurrencyTypes, ReactiveVariable<int>>(currencies);
+            
             playerDataProvider.RegisterWriter(this);
             playerDataProvider.RegisterReader(this);
         }
